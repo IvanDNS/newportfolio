@@ -215,14 +215,14 @@
                     </div>
                         <!-- Iconos de skills -->
                     <div class="absolute top-24 right-[-25px] transform rotate-[-15deg] skew-x-[15deg] skew-y-[-2deg] z-10 flex gap-6">
-                        <img src="img/html2.png" alt="HTML" class="w-16 h-16 rounded-xl shadow-lg">
+                        <img src="img/html.png" alt="HTML" class="w-16 h-16 rounded-xl shadow-lg">
                         <img src="img/css.png" alt="CSS" class="w-16 h-16 rounded-xl shadow-lg">
                         <img src="img/js.png" alt="JavaScript" class="w-16 h-16 rounded-xl shadow-lg">
                     </div>
                     <div class="absolute top-48 right-[-75px] transform rotate-[-15deg] skew-x-[15deg] skew-y-[-2deg] z-10 flex gap-6">
-                        <img src="img/html.png" alt="HTML" class="w-16 h-16 rounded-xl shadow-lg">
-                        <img src="img/css.png" alt="CSS" class="w-16 h-16 rounded-xl shadow-lg">
-                        <img src="img/js.png" alt="JavaScript" class="w-16 h-16 rounded-xl shadow-lg">
+                        <img src="img/laravel.webp" alt="Laravel" class="w-16 h-16 rounded-xl shadow-lg">
+                        <img src="img/html.png" alt="CSS" class="w-16 h-16 rounded-xl shadow-lg">
+                        <img src="img/css.png" alt="JavaScript" class="w-16 h-16 rounded-xl shadow-lg">
                     </div>
                 <div class="absolute -right-44 -top-14 scale-105 bottom-0 w-[130%] rounded-3xl transform rotate-[-2deg]">
                 <img 
