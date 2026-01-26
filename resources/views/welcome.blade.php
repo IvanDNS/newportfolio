@@ -37,7 +37,7 @@
       >
         <!-- Sección Principal (Info Personal) -->
         <div
-          class="relative md:col-span-3 aspect-square md:aspect-auto md:row-span-2  bg-gradient-to-r from-[#00C2D1] via-blue-500 to-purple-600 rounded-3xl overflow-hidden animate-fade-right animate-duration-[2000ms]"
+          class="relative md:col-span-3 aspect-square md:aspect-auto md:row-span-2  bg-gradient-to-r from-[#A47ED4] via-purple-600 to-purple-400 rounded-3xl overflow-hidden animate-fade-right animate-duration-[2000ms]"
         >
           <section
             class="absolute left-0  md:w-1/2 my-10 md:my-40 mx-5 md:mx-10 font-sans text-fuchsia-50 text-xl md:text-3xl font-Ubuntu"
@@ -191,7 +191,7 @@
 
         <!-- Sección de Skills -->
             <div
-            class="col-span-2 text-white rounded-3xl flex overflow-hidden shadow-sm bg-slate-200 relative animate-flip-down animate-delay-[900ms]"
+            class="col-span-2 text-white rounded-3xl flex overflow-hidden shadow-sm bg-slate-300 relative animate-flip-down animate-delay-[900ms]"
             >
             <!-- Lado izquierdo con texto e iconos -->
             <div class="w-1/2 flex flex-col justify-end pb-12 px-14">
@@ -234,6 +234,67 @@
             </div>
             </div>
 
+        <!-- Seccion Spotify-->
+        <div class="md:col-span-2 min-h-80 rounded-3xl bg-zinc-900 p-0 shadow-lg flex flex-col justify-between text-white animate-flip-down animate-delay-[1100ms]">
+          <div class="text-center flex-1 flex flex-col items-center justify-center p-1">
+            <div class="text-6xl">
+              <img src="img/alba.png" alt="Album Cover" class="w-44 rounded-xl shadow-lg object-cover">
+            </div>
+            <span class="text-sm text-zinc-400 mt-3">Alba ambiente S.A - Desarrollador de software</span>
+          </div>
+          
+          <!-- Spotify-like controls -->
+          <div class="mt-0 bg-black rounded-b-3xl p-3 pb-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-gray-400">Ag 2025</span>
+              <div class="flex-1 mx-4 bg-gray-700 h-1 mb-2 rounded-full overflow-hidden">
+                <div class="bg-white h-full w-0" style="width: 0%"></div>
+              </div>
+              <span class="text-xs text-gray-400">Today</span>
+            </div>
+            <div class="flex items-center justify-center gap-6">
+              <button class="text-gray-400 hover:text-white transition">
+                <i class="fas fa-random text-sm"></i>
+              </button>
+              <button class="text-gray-400 hover:text-white transition">
+                <i class="fas fa-step-backward"></i>
+              </button>
+              <button class="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center hover:scale-110 transition">
+                <i class="fas fa-play text-sm"></i>
+              </button>
+              <button class="text-gray-400 hover:text-white transition">
+                <i class="fas fa-step-forward"></i>
+              </button>
+              <button class="text-gray-400 hover:text-white transition">
+                <i class="fas fa-redo text-sm"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enlaces a LinkedIn -->
+        <a
+          href="https://www.linkedin.com/in/ivannegretes/"
+          target="_blank"
+          class="flex flex-col justify-center items-center bg-[#0274B3] rounded-3xl relative overflow-hidden col-span-1 aspect-square shadow-sm cursor-pointer animate-flip-down animate-delay-[1200ms]"
+        >
+          <img
+            class="h-[45%] hover:scale-[120%] transition duration-300 ease-in-out"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png"
+            alt="LinkedIn"
+          />
+        </a>
+        <!-- Enlaces a cv -->
+        <a
+          href="/pdf/IvánNegreteSudyCV.pdf"
+          target="_blank"
+          class="flex flex-col justify-center items-center bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-600 via-[#008784] to-[#008784] rounded-3xl relative overflow-hidden col-span-1 aspect-square shadow-sm cursor-pointer animate-flip-down animate-delay-[1300ms]"
+        >
+          <span
+            class="text-white text-9xl md:text-9xl font-Ubuntu font-bold hover:scale-[110%] transition duration-300 ease-in-out"
+            >CV</span
+          >
+        </a>
 
         <!-- Sección de Experiencia HN Seguros -->
         <div
@@ -376,29 +437,23 @@
 
         </div>
 
-        <!-- Enlaces a LinkedIn -->
-        <a
-          href="https://www.linkedin.com/in/ivannegretes/"
-          target="_blank"
-          class="flex flex-col justify-center items-center bg-[#0274B3] rounded-3xl relative overflow-hidden col-span-1 aspect-square shadow-sm cursor-pointer animate-flip-down animate-delay-[1200ms]"
+      <!-- Sección de GITHUB -->
+        <button
+        class="text-white rounded-3xl flex relative overflow-hidden col-span-1 aspect-square shadow-sm bg-[#f9f871] p-4 justify-center items-center animate-flip-down animate-delay-[1100ms]"
+        onclick=" window.open('https://github.com/IvanDNS','_blank')"
         >
-          <img
-            class="h-[45%] hover:scale-[120%] transition duration-300 ease-in-out"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png"
-            alt="LinkedIn"
-          />
-        </a>
-        <!-- Enlaces a cv -->
-        <a
-          href="/pdf/IvánNegreteSudyCV.pdf"
-          target="_blank"
-          class="flex flex-col justify-center items-center bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-600 via-[#008784] to-[#008784] rounded-3xl relative overflow-hidden col-span-1 aspect-square shadow-sm cursor-pointer animate-flip-down animate-delay-[1300ms]"
+          <h1 class="text-[180px]"><i class="fa-brands fa-github text-gray-900 hover:scale-[115%] transition duration-300 ease-in-out"></i></h1>
+        </button>
+
+        <!-- Sección de triniyy pool -->
+        <button class="text-white rounded-3xl flex relative overflow-hidden col-span-1 aspect-square shadow-sm bg-cyan-950 bg-cover p-4 justify-center items-center animate-flip-down animate-delay-[1100ms]"
+            onclick=" window.open('https://trinitypool.netlify.app/','_blank')"
         >
-          <span
-            class="text-white text-9xl md:text-9xl font-Ubuntu font-bold hover:scale-[110%] transition duration-300 ease-in-out"
-            >CV</span
-          >
-        </a>
+        <div class="h-full flex justify-center items-center">
+        <img src="img/trinity.png" class="h-[55%] animate-wiggle animate-infinite animate-duration-[2000ms]" />
+        
+        </div>
+        </button>
 
         <!-- Sección de Experiencia Mapfre -->
         <div
@@ -474,23 +529,36 @@
         class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 opacity-0 transition-opacity duration-300 pointer-events-none" />
         </div>
         
-        <!-- Sección de GITHUB -->
-        <button
-        class="text-white rounded-3xl flex relative overflow-hidden col-span-1 aspect-square shadow-sm bg-[#f9f871] p-4 justify-center items-center animate-flip-down animate-delay-[1100ms]"
-        onclick=" window.open('https://github.com/IvanDNS','_blank')"
+        <!-- Sección de Edad -->
+        <div
+          class="text-white rounded-3xl flex relative overflow-hidden aspect-square shadow-sm bg-[#9E509D] p-4 justify-center items-center animate-flip-down animate-delay-[1000ms]"
         >
-          <h1 class="text-[180px]"><i class="fa-brands fa-github text-gray-900 hover:scale-[115%] transition duration-300 ease-in-out"></i></h1>
-        </button>
-
-        <!-- Sección de triniyy pool -->
-        <button class="text-white rounded-3xl flex relative overflow-hidden col-span-1 aspect-square shadow-sm bg-cyan-950 bg-cover p-4 justify-center items-center animate-flip-down animate-delay-[1100ms]"
-            onclick=" window.open('https://trinitypool.netlify.app/','_blank')"
-        >
-        <div class="h-full flex justify-center items-center">
-        <img src="img/trinity.png" class="h-[55%] animate-wiggle animate-infinite animate-duration-[2000ms]" />
-        
+          <div
+            class="flex justify-center items-center flex-col font-Handjet opacity-80"
+          >
+            <span
+              id="edad"
+              class="select-none text-gray-800 text-9xl md:text-6xl lg:text-9xl font-Ubuntu font-bold hover:scale-[110%] transition duration-300 ease-in-out"
+              >26</span
+            >
+            <p
+              class="select-none text-gray-800 text-xs md:text-lg uppercase text-center mt-0 font-bold "
+            >
+              Años
+            </p>
+          </div>
         </div>
-        </button>
+
+        <!-- Sección relleno -->
+        <div
+          class="text-white rounded-3xl flex relative overflow-hidden aspect-square shadow-sm bg-slate-900 p-4 justify-center items-center animate-flip-down animate-delay-[1000ms]"
+        >
+          <div
+            class="flex justify-center items-center flex-col font-Handjet opacity-80"
+          >
+          </div>
+        </div>
+
         <!-- Bloque Whatsapp -->
         <div
           class="md:col-span-2 aspect-auto rounded-3xl flex relative overflow-hidden shadow-sm bg-white animate-flip-down animate-delay-[1100ms]"
