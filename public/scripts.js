@@ -1,19 +1,3 @@
-import './bootstrap';
-
-
-
-function actualizarHora() {
-    const ahora = new Date();
-    const horas = String(ahora.getHours()).padStart(2, '0');
-    const minutos = String(ahora.getMinutes()).padStart(2, '0');
-    document.getElementById('reloj').textContent = `${horas}:${minutos}`;
-}
-
-// Actualizar inmediatamente y luego cada segundo
-actualizarHora();
-setInterval(actualizarHora, 1000);
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const likeButton = document.getElementById("like-button");
     const likeCountElement = document.getElementById("like-count");
@@ -86,3 +70,4 @@ document.getElementById('edad').addEventListener('mouseover', function() {
         edadElement.innerText = initialAge.toString(); 
     });
 });
+
