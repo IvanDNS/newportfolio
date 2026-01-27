@@ -31,7 +31,7 @@
   <body
     class="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-700 via- to-black overflow-auto"
   >
-    <div class="flex flex-col m-5">
+    <div class="flex flex-col m-0">
       <div
         class="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-4 my-5 container mx-auto xl:px-20"
       >
@@ -215,14 +215,14 @@
                     </div>
                         <!-- Iconos de skills -->
                     <div class="absolute top-24 right-[-25px] transform rotate-[-15deg] skew-x-[15deg] skew-y-[-2deg] z-10 flex gap-6">
-                        <img src="img/html.png" alt="HTML" class="w-16 h-16 rounded-xl shadow-lg">
-                        <img src="img/css.png" alt="CSS" class="w-16 h-16 rounded-xl shadow-lg">
-                        <img src="img/js.png" alt="JavaScript" class="w-16 h-16 rounded-xl shadow-lg">
+                        <img src="img/html.webp" alt="HTML" class="w-16 h-16 rounded-xl">
+                        <img src="img/css.webp" alt="CSS" class="w-16 h-16 rounded-xl">
+                        <img src="img/javascript.webp" alt="JavaScript" class="w-16 h-16 rounded-xl">
                     </div>
                     <div class="absolute top-48 right-[-75px] transform rotate-[-15deg] skew-x-[15deg] skew-y-[-2deg] z-10 flex gap-6">
-                        <img src="img/laravel.webp" alt="Laravel" class="w-16 h-16 rounded-xl shadow-lg">
-                        <img src="img/html.png" alt="CSS" class="w-16 h-16 rounded-xl shadow-lg">
-                        <img src="img/css.png" alt="JavaScript" class="w-16 h-16 rounded-xl shadow-lg">
+                        <img src="img/laravel.webp" alt="Laravel" class="w-16 h-16 rounded-xl">
+                        <img src="img/html.webp" alt="CSS" class="w-16 h-16 rounded-xl">
+                        <img src="img/css.webp" alt="JavaScript" class="w-16 h-16 rounded-xl">
                     </div>
                 <div class="absolute -right-44 -top-14 scale-105 bottom-0 w-[130%] rounded-3xl transform rotate-[-2deg]">
                 <img 
@@ -234,24 +234,84 @@
             </div>
             </div>
 
-        <!-- Seccion Spotify-->
-        <div class="md:col-span-2 min-h-80 rounded-3xl bg-zinc-900 p-0 shadow-lg flex flex-col justify-between text-white animate-flip-down animate-delay-[1100ms]">
-          <div class="text-center flex-1 flex flex-col items-center justify-center p-1">
-            <div class="text-6xl">
-              <img src="img/alba.png" alt="Album Cover" class="w-44 rounded-xl shadow-lg object-cover">
-            </div>
-            <span class="text-sm text-zinc-400 mt-3">Alba ambiente S.A - Desarrollador de software</span>
+      <!-- Seccion Spotify-->
+        <div
+          id="spotify-container"
+          class="relative md:col-span-2 min-h-80 rounded-3xl bg-zinc-900 p-0 shadow-lg flex flex-col justify-between text-white animate-flip-down animate-delay-[1100ms] overflow-hidden"
+        >
+
+          <!-- Icono Spotify -->
+          <div class="absolute top-4 right-4 text-green-500 text-xl hover:scale-110 hover:drop-shadow-[0_0_8px_#1DB954] transition z-20">
+            <i class="fab fa-spotify text-2xl"></i>
           </div>
-          
+
+          <!-- CONTENIDO PRINCIPAL -->
+          <div class="text-center flex-1 flex flex-col items-center justify-center p-1 relative z-10">
+
+            <!-- Album (este se moverá hacia arriba) -->
+            <div
+              id="albumWrap"
+              class="transition-transform duration-500 ease-out"
+            >
+              <a
+                href="https://cl.linkedin.com/company/alba-ambiente-s.a."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="img/alba.png"
+                  alt="Album Cover"
+                  class="w-44 rounded-xl shadow-lg object-cover hover:drop-shadow-[0_0_15px_#1DB954] transition"
+                >
+              </a>
+            </div>
+
+            <span class="text-sm text-zinc-400 mt-3 -mb-3">
+              Alba ambiente S.A - Desarrollador de software
+            </span>
+          </div>
+
+          <!-- AUDIO -->
+          <audio id="player">
+            <source src="/audio/1.mp3" type="audio/mpeg">
+          </audio>
+
+          <!-- PANEL TIPO "LYRICS" (oculto abajo) -->
+          <div
+            id="lyricsPanel"
+            class="absolute left-0 right-0 bottom-0
+                  translate-y-full
+                  transition-transform duration-500 ease-out
+                  backdrop-blur
+                  p-4 pt-6
+                  rounded-b-3xl
+                  z-0"
+          >
+
+            <div class="space-y-3 leading-relaxed text-center">
+              <p class="text-4xl text-slate-700 font-bold">
+                Desarrollo y mantengo sistemas de control de asistencia utilizando
+                PHP, Laravel y SQL Server.
+              </p>
+              <p class="text-xl text-white/90">
+                
+              </p>
+              <p class="text-xl text-white/90">
+                
+              </p>
+            </div>
+          </div>
+
           <!-- Spotify-like controls -->
-          <div class="mt-0 bg-black rounded-b-3xl p-3 pb-4">
+          <div class="bg-black rounded-b-3xl p-3 pb-4 relative z-20">
             <div class="flex items-center justify-between">
               <span class="text-xs text-gray-400">Ag 2025</span>
               <div class="flex-1 mx-4 bg-gray-700 h-1 mb-2 rounded-full overflow-hidden">
-                <div class="bg-white h-full w-0" style="width: 0%"></div>
+                <div class="bg-white h-full w-0"></div>
               </div>
               <span class="text-xs text-gray-400">Today</span>
             </div>
+
             <div class="flex items-center justify-center gap-6">
               <button class="text-gray-400 hover:text-white transition">
                 <i class="fas fa-random text-sm"></i>
@@ -259,8 +319,11 @@
               <button class="text-gray-400 hover:text-white transition">
                 <i class="fas fa-step-backward"></i>
               </button>
-              <button class="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center hover:scale-110 transition">
-                <i class="fas fa-play text-sm"></i>
+              <button
+                onclick="togglePlay()"
+                class="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center hover:scale-110 transition"
+              >
+                <i id="playIcon" class="fas fa-play text-sm"></i>
               </button>
               <button class="text-gray-400 hover:text-white transition">
                 <i class="fas fa-step-forward"></i>
@@ -271,6 +334,8 @@
             </div>
           </div>
         </div>
+
+
 
         <!-- Enlaces a LinkedIn -->
         <a
@@ -347,11 +412,10 @@
 
                 </div>
 
-                <div>
-
-                  <i class="fab fa-facebook text-blue-600 text-3xl"></i>
-
-                </div>
+              <div class="hover:scale-110 transition">
+                <i class="fab fa-facebook text-blue-600 text-3xl
+                          hover:drop-shadow-[0_0_8px_#1877F2] transition"></i>
+              </div>
 
               </div>
 
@@ -478,16 +542,19 @@
             </div>
             <svg
               viewBox="328 355 335 276"
-              class="ml-auto"
-              height="24"
-              width="24"
               xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              class="ml-auto transition
+                    hover:scale-105
+                    hover:drop-shadow-[0_0_8px_#3BA9EE]"
             >
               <path
                 d="M 630, 425 A 195, 195 0 0 1 331, 600 A 142, 142 0 0 0 428, 570 A 70, 70 0 0 1 370, 523 A 70, 70 0 0 0 401, 521 A 70, 70 0 0 1 344, 455 A 70, 70 0 0 0 372, 460 A 70, 70 0 0 1 354, 370 A 195, 195 0 0 0 495, 442 A 67, 67 0 0 1 611, 380 A 117, 117 0 0 0 654, 363 A 65, 65 0 0 1 623, 401 A 117, 117 0 0 0 662, 390 A 65, 65 0 0 1 630, 425 Z"
-                style="fill:#3BA9EE"
-              ></path>
+                fill="#3BA9EE"
+              />
             </svg>
+
           </div>
           <div
             class="mt-3 mb-1 leading-normal text-base md:text-lg line-clamp-5 text-ellipsis"
@@ -586,7 +653,7 @@
             >
               <h1 class="text-xl font-semibold">Chats</h1>
               <div class="flex items-center space-x-4">
-                <i class="fab fa-whatsapp text-2xl text-green-600 pr-4"></i>
+                <i class="fab fa-whatsapp text-2xl text-green-600 pr-4 hover:drop-shadow-[0_0_5px_#3BA9EE] hover:scale-105"></i>
               </div>
             </div>
 

@@ -13,6 +13,8 @@
     transition: opacity 0.3s ease;
 }
 
+
+
 /* Clase para la animación */
 .like-animation {
     animation: like-spin-up 0.7s ease-out forwards; /* Animación de giro hacia arriba */

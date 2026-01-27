@@ -13,6 +13,69 @@ function actualizarHora() {
 actualizarHora();
 setInterval(actualizarHora, 1000);
 
+document.addEventListener("DOMContentLoaded", () => {
+  const audio = document.getElementById("player");
+  const icon = document.getElementById("playIcon");
+  const albumWrap = document.getElementById("albumWrap");
+  const lyricsPanel = document.getElementById("lyricsPanel");
+  const spotifyContainer = document.getElementById("spotify-container");
+
+  if (!audio || !icon || !albumWrap || !lyricsPanel) {
+    console.error("Faltan elementos:", { audio, icon, albumWrap, lyricsPanel });
+    return;
+  }
+
+  function openLyricsMode() {
+    // disco sube
+    albumWrap.classList.add("-translate-y-56");
+    // panel sube desde abajo
+    lyricsPanel.classList.remove("translate-y-full");
+    lyricsPanel.classList.add("-translate-y-24");
+    // cambia color fondo
+    spotifyContainer.classList.add(
+    "bg-violet-500",
+    "shadow-[0_0_30px_#a78bfa]"
+    );
+  }
+
+  function closeLyricsMode() {
+    albumWrap.classList.remove("-translate-y-56");
+    lyricsPanel.classList.add("translate-y-full");
+    lyricsPanel.classList.remove("-translate-y-24");
+    spotifyContainer.classList.remove(
+    "bg-violet-500",
+    "shadow-[0_0_30px_#a78bfa]"
+    );
+  }
+
+  // Si termina la canción, vuelve a estado inicial
+  audio.addEventListener("ended", () => {
+    icon.classList.remove("fa-pause");
+    icon.classList.add("fa-play");
+    closeLyricsMode();
+    audio.currentTime = 0;
+  });
+
+  window.togglePlay = function () {
+    if (audio.paused) {
+      audio
+        .play()
+        .then(() => {
+          icon.classList.remove("fa-play");
+          icon.classList.add("fa-pause");
+          openLyricsMode();
+        })
+        .catch((err) => console.error("No se pudo reproducir:", err));
+    } else {
+      audio.pause();
+      icon.classList.remove("fa-pause");
+      icon.classList.add("fa-play");
+      closeLyricsMode();
+    }
+  };
+});
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const likeButton = document.getElementById("like-button");
@@ -86,3 +149,4 @@ document.getElementById('edad').addEventListener('mouseover', function() {
         edadElement.innerText = initialAge.toString(); 
     });
 });
+
