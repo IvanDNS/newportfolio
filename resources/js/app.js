@@ -17,38 +17,109 @@ document.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("player");
   const icon = document.getElementById("playIcon");
   const albumWrap = document.getElementById("albumWrap");
+  const albumText = document.getElementById("albumText");
   const lyricsPanel = document.getElementById("lyricsPanel");
   const spotifyContainer = document.getElementById("spotify-container");
+  const lyric1 = document.getElementById("lyric1");
+  const lyric2 = document.getElementById("lyric2");
+  const lyric3 = document.getElementById("lyric3");
 
   if (!audio || !icon || !albumWrap || !lyricsPanel) {
     console.error("Faltan elementos:", { audio, icon, albumWrap, lyricsPanel });
     return;
   }
 
+  let isLyricsModeOpen = false;
+  let fadeTimeouts = [];
+  let currentLyricIndex = 0;
+
+  const lyrics = [lyric1, lyric2, lyric3];
+
+  function showLyric(index) {
+    // Oculta todas las letras
+    lyrics.forEach(lyric => {
+      lyric.classList.add("hidden");
+      lyric.style.opacity = "0";
+    });
+
+    // Muestra solo la letra actual
+    const currentLyric = lyrics[index];
+    currentLyric.classList.remove("hidden");
+    
+    // Pequeño delay para que la transición de opacity funcione
+    setTimeout(() => {
+      currentLyric.style.opacity = "1";
+    }, 50);
+  }
+
   function openLyricsMode() {
-    // disco sube
-    albumWrap.classList.add("-translate-y-56");
-    // panel sube desde abajo
-    lyricsPanel.classList.remove("translate-y-full");
-    lyricsPanel.classList.add("-translate-y-24");
-    // cambia color fondo
-    spotifyContainer.classList.add(
-    "bg-violet-500",
-    "shadow-[0_0_30px_#a78bfa]"
-    );
+    if (isLyricsModeOpen) return;
+    isLyricsModeOpen = true;
+    currentLyricIndex = 0;
+
+    requestAnimationFrame(() => {
+      albumWrap.style.transform = "translateY(-3rem)";
+      albumWrap.style.opacity = "0";
+      albumText.style.opacity = "0";
+      lyricsPanel.style.transform = "translateY(-6rem)";
+      spotifyContainer.style.backgroundColor = "#8b5cf6";
+      spotifyContainer.style.boxShadow = "0 0 30px #a78bfa";
+    });
+
+    // Muestra la primera letra después de 400ms
+    fadeTimeouts.push(setTimeout(() => {
+      showLyric(0);
+    }, 400));
   }
 
   function closeLyricsMode() {
-    albumWrap.classList.remove("-translate-y-56");
-    lyricsPanel.classList.add("translate-y-full");
-    lyricsPanel.classList.remove("-translate-y-24");
-    spotifyContainer.classList.remove(
-    "bg-violet-500",
-    "shadow-[0_0_30px_#a78bfa]"
-    );
+    if (!isLyricsModeOpen) return;
+    isLyricsModeOpen = false;
+    currentLyricIndex = 0;
+
+    fadeTimeouts.forEach(timeout => clearTimeout(timeout));
+    fadeTimeouts = [];
+
+    requestAnimationFrame(() => {
+      albumWrap.style.transform = "";
+      albumWrap.style.opacity = "1";
+      albumText.style.opacity = "1";
+      lyricsPanel.style.transform = "";
+      spotifyContainer.style.backgroundColor = "";
+      spotifyContainer.style.boxShadow = "";
+      
+      // Oculta TODAS las letras
+      lyrics.forEach(lyric => {
+        lyric.classList.add("hidden");
+        lyric.style.opacity = "0";
+      });
+    });
   }
 
-  // Si termina la canción, vuelve a estado inicial
+  function nextLyric() {
+    if (!isLyricsModeOpen) return;
+
+    // Fade out de la letra actual
+    lyrics[currentLyricIndex].style.opacity = "0";
+
+    setTimeout(() => {
+      // Avanza al siguiente
+      currentLyricIndex = (currentLyricIndex + 1) % lyrics.length;
+      showLyric(currentLyricIndex);
+    }, 400);
+  }
+
+  function prevLyric() {
+    if (!isLyricsModeOpen) return;
+
+    lyrics[currentLyricIndex].style.opacity = "0";
+
+    setTimeout(() => {
+      currentLyricIndex = (currentLyricIndex - 1 + lyrics.length) % lyrics.length;
+      showLyric(currentLyricIndex);
+    }, 400);
+  }
+
   audio.addEventListener("ended", () => {
     icon.classList.remove("fa-pause");
     icon.classList.add("fa-play");
@@ -73,6 +144,9 @@ document.addEventListener("DOMContentLoaded", () => {
       closeLyricsMode();
     }
   };
+
+  window.nextLyric = nextLyric;
+  window.prevLyric = prevLyric;
 });
 
 

@@ -234,10 +234,10 @@
             </div>
             </div>
 
-      <!-- Seccion Spotify-->
+        <!-- Seccion Spotify-->
         <div
           id="spotify-container"
-          class="relative md:col-span-2 min-h-80 rounded-3xl bg-zinc-900 p-0 shadow-lg flex flex-col justify-between text-white animate-flip-down animate-delay-[1100ms] overflow-hidden"
+          class="relative md:col-span-2 min-h-80 rounded-3xl bg-zinc-900 p-0 shadow-lg flex flex-col justify-between text-white animate-flip-down animate-delay-[1100ms] overflow-hidden will-change-[background-color,box-shadow]"
         >
 
           <!-- Icono Spotify -->
@@ -248,16 +248,11 @@
           <!-- CONTENIDO PRINCIPAL -->
           <div class="text-center flex-1 flex flex-col items-center justify-center p-1 relative z-10">
 
-            <!-- Album (este se moverá hacia arriba) -->
+            <!-- Album (fade out y sube un poco) -->
             <div
               id="albumWrap"
-              class="transition-transform duration-500 ease-out"
+              class="transition-all duration-700 ease-out will-change-[transform,opacity]"
             >
-              <a
-                href="https://cl.linkedin.com/company/alba-ambiente-s.a."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
                 <img
                   src="img/alba.png"
                   alt="Album Cover"
@@ -266,13 +261,13 @@
               </a>
             </div>
 
-            <span class="text-sm text-zinc-400 mt-3 -mb-3">
+            <span id="albumText" class="text-sm text-zinc-400 mt-3 -mb-3 transition-opacity duration-700">
               Alba ambiente S.A - Desarrollador de software
             </span>
           </div>
 
           <!-- AUDIO -->
-          <audio id="player">
+          <audio id="player" preload="metadata">
             <source src="/audio/1.mp3" type="audio/mpeg">
           </audio>
 
@@ -281,24 +276,34 @@
             id="lyricsPanel"
             class="absolute left-0 right-0 bottom-0
                   translate-y-full
-                  transition-transform duration-500 ease-out
+                  transition-transform duration-700 ease-out
                   backdrop-blur
-                  p-4 pt-6
+                  p-2 pt-0
                   rounded-b-3xl
-                  z-0"
+                  z-0
+                  will-change-transform"
           >
-
-            <div class="space-y-3 leading-relaxed text-center">
-              <p class="text-4xl text-slate-700 font-bold">
-                Desarrollo y mantengo sistemas de control de asistencia utilizando
-                PHP, Laravel y SQL Server.
+            <!-- Contenedor relativo para posicionar las letras -->
+            <div class="relative min-h-[200px] flex items-center justify-center text-center leading-tight">
+              
+              <p id="lyric1" class="absolute inset-0 flex items-center justify-center px-6 text-4xl text-slate-700 font-bold opacity-0 transition-opacity duration-700 hidden">
+                Diseño y mantengo sistemas críticos
+                que gestionan asistencia y procesos operativos
+                usados diariamente por empresas.
               </p>
-              <p class="text-xl text-white/90">
-                
+              
+              <p id="lyric2" class="absolute inset-0 flex items-center justify-center px-6 text-4xl text-slate-700 font-bold opacity-0 transition-opacity duration-700 hidden">
+                Desarrollo con PHP y Laravel,
+                gestionando datos críticos en SQL Server y PostgreSQL,
+                integradas a infraestructura en la nube y flujos reales de negocio.
               </p>
-              <p class="text-xl text-white/90">
-                
+              
+              <p id="lyric3" class="absolute inset-0 flex items-center justify-center px-6 text-4xl text-slate-700 font-bold opacity-0 transition-opacity duration-700 hidden">
+                Desarrollo reportes complejos para hospitales
+                y sistemas completos de casino, integrados
+                a asistencia, turnos y marcaciones.
               </p>
+              
             </div>
           </div>
 
@@ -316,18 +321,18 @@
               <button class="text-gray-400 hover:text-white transition">
                 <i class="fas fa-random text-sm"></i>
               </button>
-              <button class="text-gray-400 hover:text-white transition">
+              <button onclick="prevLyric()" class="text-gray-400 hover:text-white transition">
                 <i class="fas fa-step-backward"></i>
               </button>
               <button
-                onclick="togglePlay()"
-                class="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center hover:scale-110 transition"
+              onclick="togglePlay()"
+              class="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center hover:scale-110 transition"
               >
                 <i id="playIcon" class="fas fa-play text-sm"></i>
               </button>
-              <button class="text-gray-400 hover:text-white transition">
-                <i class="fas fa-step-forward"></i>
-              </button>
+              <button onclick="nextLyric()" class="text-gray-400 hover:text-white transition">
+              <i class="fas fa-step-forward"></i>
+            </button>
               <button class="text-gray-400 hover:text-white transition">
                 <i class="fas fa-redo text-sm"></i>
               </button>
