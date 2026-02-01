@@ -49,6 +49,7 @@
               bg-gradient-to-br from-slate-950 via-violet-950 to-slate-900
               animate-fade-right animate-duration-[2000ms]"
       >
+      
 
         <!-- Glow decorativo -->
         <div class="absolute -top-32 -left-32 w-96 h-96 bg-violet-600/30 rounded-full blur-3xl"></div>
@@ -319,8 +320,6 @@
                                 <img src="img/java.webp" alt="">
                             </div>
                         </div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
                     </div>
                 </div>
             </div>
@@ -437,11 +436,12 @@
         <a
           href="https://www.linkedin.com/in/ivannegretes/"
           target="_blank"
-          class="flex flex-col justify-center items-center bg-[#0274B3] rounded-3xl relative overflow-hidden col-span-1 aspect-square shadow-sm cursor-pointer animate-flip-down animate-delay-[1200ms]"
+          class="flex flex-col justify-center items-center bg-gradient-to-bl from-violet-900 via-violet-600 to-violet-300
+ rounded-3xl relative overflow-hidden col-span-1 aspect-square shadow-sm cursor-pointer animate-flip-down animate-delay-[1200ms]"
         >
           <img
-            class="h-[45%] hover:scale-[120%] transition duration-300 ease-in-out"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png"
+            class="h-[50%] hover:scale-[120%] transition duration-300 ease-in-out opacity-80"
+            src="img/linkedin.webp"
             alt="LinkedIn"
           />
         </a>
@@ -449,10 +449,11 @@
         <a
           href="/pdf/IvánNegreteSudyCV.pdf"
           target="_blank"
-          class="flex flex-col justify-center items-center bg-[#325f77] rounded-3xl relative overflow-hidden col-span-1 aspect-square shadow-sm cursor-pointer animate-flip-down animate-delay-[1300ms]"
+          class="flex flex-col justify-center items-center bg-gradient-to-br from-slate-900 via-violet-950 to-slate-800 
+ rounded-3xl relative overflow-hidden col-span-1 aspect-square shadow-sm cursor-pointer animate-flip-down animate-delay-[1300ms]"
         >
           <span
-            class="text-white text-9xl md:text-9xl font-Ubuntu font-bold hover:scale-[110%] transition duration-300 ease-in-out"
+            class="text-white/80 text-9xl md:text-9xl font-Ubuntu font-bold hover:scale-[110%] transition duration-300 ease-in-out"
             >CV</span
           >
         </a>
@@ -599,14 +600,16 @@
 
       <!-- Sección de GITHUB -->
         <button
-        class="text-white rounded-3xl flex relative overflow-hidden col-span-1 aspect-square shadow-sm bg-[#ffadff] p-4 justify-center items-center animate-flip-down animate-delay-[1100ms]"
+        class="text-white rounded-3xl flex relative overflow-hidden col-span-1 aspect-square shadow-sm bg-gradient-to-br from-violet-950 via-slate-900 to-violet-900
+ p-4 justify-center items-center animate-flip-down animate-delay-[1100ms]"
         onclick=" window.open('https://github.com/IvanDNS','_blank')"
         >
-          <h1 class="text-[180px]"><i class="fa-brands fa-github text-gray-900 hover:scale-[115%] transition duration-300 ease-in-out"></i></h1>
+          <h1 class="text-[180px]"><i class="fa-brands fa-github text-white/80 hover:scale-[115%] transition duration-300 ease-in-out"></i></h1>
         </button>
 
         <!-- Sección de triniyy pool -->
-        <button class="text-white rounded-3xl flex relative overflow-hidden col-span-1 aspect-square shadow-sm bg-[#9b41ed] bg-cover p-4 justify-center items-center animate-flip-down animate-delay-[1100ms]"
+        <button class="text-white rounded-3xl flex relative overflow-hidden col-span-1 aspect-square shadow-sm bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600
+ bg-cover p-4 justify-center items-center animate-flip-down animate-delay-[1100ms]"
             onclick=" window.open('https://trinitypool.netlify.app/','_blank')"
         >
         <div class="h-full flex justify-center items-center">
@@ -694,14 +697,15 @@
         
         <!-- Sección de Edad -->
         <div
-          class="text-white rounded-3xl flex relative overflow-hidden aspect-square shadow-sm bg-[#325F77] p-4 justify-center items-center animate-flip-down animate-delay-[1000ms]"
+          class="text-white rounded-3xl flex relative overflow-hidden aspect-square shadow-sm bg-gradient-to-br from-violet-950 to-slate-900
+ p-4 justify-center items-center animate-flip-down animate-delay-[1000ms]"
         >
           <div
             class="flex justify-center items-center flex-col font-Handjet opacity-80"
           >
             <span
               id="edad"
-              class="select-none text-gray-800 text-9xl md:text-6xl lg:text-9xl font-Ubuntu font-bold hover:scale-[110%] transition duration-300 ease-in-out"
+              class="select-none text-white/80 text-9xl md:text-6xl lg:text-9xl font-Ubuntu font-bold hover:scale-[110%] transition duration-300 ease-in-out"
               >26</span
             >
             <p
@@ -714,7 +718,8 @@
 
         <!-- Sección relleno -->
         <div
-          class="text-white rounded-3xl flex relative overflow-hidden aspect-square shadow-sm bg-[#0274B3] p-4 justify-center items-center animate-flip-down animate-delay-[1000ms]"
+          class="text-white rounded-3xl flex relative overflow-hidden aspect-square shadow-sm bg-gradient-to-br from-violet-900 to-violet-950
+ p-4 justify-center items-center animate-flip-down animate-delay-[1000ms]"
         >
           <div
             class="flex justify-center items-center flex-col font-Handjet opacity-80"

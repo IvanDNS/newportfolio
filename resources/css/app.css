@@ -26,7 +26,7 @@
 
 /* Asegura que las imágenes no se desborden */
 .swiper-slide img {
-  width: 100%;
+  width: 50%;
   height: auto;
   display: block;
   border-radius: 12px;
