@@ -1,6 +1,56 @@
 import './bootstrap';
 
 
+// Variable global para el swiper
+let mySwiper;
+
+// Espera a que el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializa el swiper
+    mySwiper = new Swiper('.swiper-container', {
+        loop: true,
+        speed: 1000,
+        autoplay: {
+            delay: 3000,
+        },
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+            rotate: 0,
+            stretch: 80,
+            depth: 200,
+            modifier: 1,
+            slideShadows: false,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        observer: true,
+        observeParents: true,
+    });
+});
+
+// Hacer las funciones accesibles globalmente para los onclick
+window.openSkillsModal = function() {
+    const modal = document.getElementById('skillsModal');
+    modal.classList.remove('hidden');
+    
+    setTimeout(() => {
+        if (mySwiper) {
+            mySwiper.update();
+            mySwiper.slideTo(1, 0);
+        }
+    }, 50);
+}
+
+window.closeSkillsModal = function() {
+    document.getElementById('skillsModal').classList.add('hidden');
+}
+
+
 
 function actualizarHora() {
     const ahora = new Date();
@@ -223,4 +273,7 @@ document.getElementById('edad').addEventListener('mouseover', function() {
         edadElement.innerText = initialAge.toString(); 
     });
 });
+
+
+
 

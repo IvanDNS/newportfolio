@@ -20,6 +20,13 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
     <style>
       body::-webkit-scrollbar {
         display: none; /* Ocultar la barra de scroll */
@@ -35,33 +42,71 @@
       <div
         class="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-4 my-5 container mx-auto xl:px-20"
       >
-        <!-- Sección Principal (Info Personal) -->
-        <div
-          class="relative md:col-span-3 aspect-square md:aspect-auto md:row-span-2  bg-gradient-to-r from-[#A47ED4] via-purple-600 to-purple-400 rounded-3xl overflow-hidden animate-fade-right animate-duration-[2000ms]"
+      <!-- Sección Principal (Info Personal) -->
+      <div
+        class="relative md:col-span-3 md:row-span-2 aspect-square md:aspect-auto
+              rounded-3xl overflow-hidden
+              bg-gradient-to-br from-slate-950 via-violet-950 to-slate-900
+              animate-fade-right animate-duration-[2000ms]"
+      >
+
+        <!-- Glow decorativo -->
+        <div class="absolute -top-32 -left-32 w-96 h-96 bg-violet-600/30 rounded-full blur-3xl"></div>
+
+        <!-- CONTENIDO -->
+        <section
+          class="relative z-10
+                md:w-1/2
+                my-10 md:my-32 mx-5 md:mx-10
+                backdrop-blur-xl bg-white/10 border border-white/15
+                rounded-3xl p-6 md:p-8
+                text-slate-200 font-Ubuntu"
         >
-          <section
-            class="absolute left-0  md:w-1/2 my-10 md:my-40 mx-5 md:mx-10 font-sans text-fuchsia-50 text-xl md:text-3xl font-Ubuntu"
+
+          <h1
+            class="text-3xl md:text-4xl font-bold tracking-tight text-white
+                  animate-fade-down animate-delay-1000"
           >
-            <h1 class="text-3xl md:text-4xl pb-2 md:pb-5 font-Ubuntu font-bold animate-fade-down animate-ease-in-out animate-delay-1000">
-              Iván Daniel Negrete Sudy
-            </h1>
-            <span class="font-Ubuntu text-lg md:text-2xl animate-fade-right animate-duration-[2000ms]"
-              >¡Hola! 😀 Bienvenido a mi página. 
-              Aquí encontrarás un breve resumen sobre mí, 
-              donde intento innovar y destacar con un enfoque 
-              distinto. Soy un desarrollador titulado en Ingeniería 
-              en Informática y te invito a echar un vistazo.
-            </span>
-          </section>
-          <img
-            id="rotatingImage"
-            src="img/tres.png"
-            height="512"
-            width="512"
-            class="absolute bottom-0 -right-24 w-8/12 md:h-full md:auto object-cover -z-0 hidden md:flex animate-duration-[4000ms]"
-            alt="Imagen Personal"
-          />
-        </div>
+            Iván Daniel Negrete Sudy
+          </h1>
+
+          <p class="mt-2 text-lg md:text-2xl text-violet-300 font-medium">
+            Desarrollador de Software · Ingeniería Informática
+          </p>
+
+          <p
+            class="mt-6 text-base md:text-xl leading-relaxed
+                  animate-fade-right animate-duration-[2000ms]"
+          >
+            Diseño y desarrollo <span class="text-white font-semibold">sistemas reales</span>
+            que gestionan procesos críticos y son utilizados diariamente por
+            <span class="text-white font-semibold">empresas e instituciones</span>.
+          </p>
+
+          <a
+            href="#projects"
+            class="inline-flex items-center gap-2 mt-8
+                  text-violet-300 hover:text-white transition group"
+          >
+            Echa un vistazo
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </section>
+
+        <!-- IMAGEN -->
+        <img
+          id="rotatingImage"
+          src="img/tres.png"
+          height="512"
+          width="512"
+          class="absolute bottom-0 -right-24 w-8/12 md:h-full object-cover hidden md:flex
+                drop-shadow-[0_0_40px_rgba(167,139,250,0.35)]
+                animate-duration-[4000ms]"
+          alt="Imagen Personal"
+        />
+
+      </div>
+
 
         <!-- Sección de Perfil (Lateral) -->
         <div
@@ -190,9 +235,10 @@
         </div>
 
         <!-- Sección de Skills -->
-            <div
-            class="col-span-2 text-white rounded-3xl flex overflow-hidden shadow-sm bg-slate-300 relative animate-flip-down animate-delay-[900ms]"
-            >
+          <div
+              class="col-span-2 text-white rounded-3xl flex overflow-hidden shadow-sm bg-slate-300 relative animate-flip-down animate-delay-[900ms] group"
+              onclick="openSkillsModal()"
+          >
             <!-- Lado izquierdo con texto e iconos -->
             <div class="w-1/2 flex flex-col justify-end pb-12 px-14">
                 <!-- Iconos de plataformas -->
@@ -209,7 +255,7 @@
             </div>
 
             <!-- Lado derecho con el mockup del teléfono -->
-            <div class="w-2/3 relative hover:-translate-x-14 transition-transform duration-300">
+            <div class="w-2/3 relative group-hover:-translate-x-14 transition-transform duration-300">
                     <div class="absolute top-9 right-52 transform rotate-[-25deg] skew-y-[10deg] text-slate-200 font-bold text-xl z-10" id="reloj">
                         12:12
                     </div>
@@ -220,9 +266,9 @@
                         <img src="img/javascript.webp" alt="JavaScript" class="w-16 h-16 rounded-xl">
                     </div>
                     <div class="absolute top-48 right-[-75px] transform rotate-[-15deg] skew-x-[15deg] skew-y-[-2deg] z-10 flex gap-6">
-                        <img src="img/laravel.webp" alt="Laravel" class="w-16 h-16 rounded-xl">
-                        <img src="img/html.webp" alt="CSS" class="w-16 h-16 rounded-xl">
-                        <img src="img/css.webp" alt="JavaScript" class="w-16 h-16 rounded-xl">
+                        <img src="img/php.webp" alt="Laravel" class="w-16 h-16 rounded-xl">
+                        <img src="img/laravel.webp" alt="CSS" class="w-16 h-16 rounded-xl">
+                        <img src="img/mysql.webp" alt="JavaScript" class="w-16 h-16 rounded-xl">
                     </div>
                 <div class="absolute -right-44 -top-14 scale-105 bottom-0 w-[130%] rounded-3xl transform rotate-[-2deg]">
                 <img 
@@ -232,6 +278,51 @@
                 />
                 </div>
             </div>
+            </div>
+
+            <!-- Modal -->
+            <div id="skillsModal" class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 animate-fade-in" onclick="closeSkillsModal()">
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-8 max-w-4xl w-full relative border border-slate-700/50 animate-jump-in overflow-hidden" onclick="event.stopPropagation()">
+                    <!-- Botón cerrar -->
+                    <button 
+                        onclick="closeSkillsModal()"
+                        class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl w-8 h-8 rounded-full border border-slate-600 hover:border-slate-400 transition-all hover:rotate-90 z-10"
+                    >
+                        ×
+                    </button>
+                    
+                    <!-- Slider main container -->
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="img/html.webp" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/css.webp" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/javascript.webp" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/php.webp" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/laravel.webp" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/mysql.webp" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/node.webp" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/java.webp" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
             </div>
 
         <!-- Seccion Spotify-->
@@ -318,9 +409,9 @@
             </div>
 
             <div class="flex items-center justify-center gap-6">
-              <button class="text-gray-400 hover:text-white transition">
+              <div class="text-gray-400 transition">
                 <i class="fas fa-random text-sm"></i>
-              </button>
+            </div>
               <button onclick="prevLyric()" class="text-gray-400 hover:text-white transition">
                 <i class="fas fa-step-backward"></i>
               </button>
@@ -333,9 +424,9 @@
               <button onclick="nextLyric()" class="text-gray-400 hover:text-white transition">
               <i class="fas fa-step-forward"></i>
             </button>
-              <button class="text-gray-400 hover:text-white transition">
+              <div class="text-gray-400 transition">
                 <i class="fas fa-redo text-sm"></i>
-              </button>
+              </div>
             </div>
           </div>
         </div>
@@ -358,7 +449,7 @@
         <a
           href="/pdf/IvánNegreteSudyCV.pdf"
           target="_blank"
-          class="flex flex-col justify-center items-center bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-600 via-[#008784] to-[#008784] rounded-3xl relative overflow-hidden col-span-1 aspect-square shadow-sm cursor-pointer animate-flip-down animate-delay-[1300ms]"
+          class="flex flex-col justify-center items-center bg-[#325f77] rounded-3xl relative overflow-hidden col-span-1 aspect-square shadow-sm cursor-pointer animate-flip-down animate-delay-[1300ms]"
         >
           <span
             class="text-white text-9xl md:text-9xl font-Ubuntu font-bold hover:scale-[110%] transition duration-300 ease-in-out"
@@ -508,14 +599,14 @@
 
       <!-- Sección de GITHUB -->
         <button
-        class="text-white rounded-3xl flex relative overflow-hidden col-span-1 aspect-square shadow-sm bg-[#f9f871] p-4 justify-center items-center animate-flip-down animate-delay-[1100ms]"
+        class="text-white rounded-3xl flex relative overflow-hidden col-span-1 aspect-square shadow-sm bg-[#ffadff] p-4 justify-center items-center animate-flip-down animate-delay-[1100ms]"
         onclick=" window.open('https://github.com/IvanDNS','_blank')"
         >
           <h1 class="text-[180px]"><i class="fa-brands fa-github text-gray-900 hover:scale-[115%] transition duration-300 ease-in-out"></i></h1>
         </button>
 
         <!-- Sección de triniyy pool -->
-        <button class="text-white rounded-3xl flex relative overflow-hidden col-span-1 aspect-square shadow-sm bg-cyan-950 bg-cover p-4 justify-center items-center animate-flip-down animate-delay-[1100ms]"
+        <button class="text-white rounded-3xl flex relative overflow-hidden col-span-1 aspect-square shadow-sm bg-[#9b41ed] bg-cover p-4 justify-center items-center animate-flip-down animate-delay-[1100ms]"
             onclick=" window.open('https://trinitypool.netlify.app/','_blank')"
         >
         <div class="h-full flex justify-center items-center">
@@ -603,7 +694,7 @@
         
         <!-- Sección de Edad -->
         <div
-          class="text-white rounded-3xl flex relative overflow-hidden aspect-square shadow-sm bg-[#9E509D] p-4 justify-center items-center animate-flip-down animate-delay-[1000ms]"
+          class="text-white rounded-3xl flex relative overflow-hidden aspect-square shadow-sm bg-[#325F77] p-4 justify-center items-center animate-flip-down animate-delay-[1000ms]"
         >
           <div
             class="flex justify-center items-center flex-col font-Handjet opacity-80"
@@ -623,7 +714,7 @@
 
         <!-- Sección relleno -->
         <div
-          class="text-white rounded-3xl flex relative overflow-hidden aspect-square shadow-sm bg-slate-900 p-4 justify-center items-center animate-flip-down animate-delay-[1000ms]"
+          class="text-white rounded-3xl flex relative overflow-hidden aspect-square shadow-sm bg-[#0274B3] p-4 justify-center items-center animate-flip-down animate-delay-[1000ms]"
         >
           <div
             class="flex justify-center items-center flex-col font-Handjet opacity-80"
