@@ -404,7 +404,7 @@
               <div class="flex-1 mx-4 bg-gray-700 h-1 mb-2 rounded-full overflow-hidden">
                 <div class="bg-white h-full w-0"></div>
               </div>
-              <span class="text-xs text-gray-400">Today</span>
+              <span class="text-xs text-gray-400">Today</br>({{ \Carbon\Carbon::parse('2025-08-01')->diffInMonths() }} months)</span>
             </div>
 
             <div class="flex items-center justify-center gap-6">
@@ -436,8 +436,7 @@
         <a
           href="https://www.linkedin.com/in/ivannegretes/"
           target="_blank"
-          class="flex flex-col justify-center items-center bg-gradient-to-bl from-violet-900 via-violet-600 to-violet-300
- rounded-3xl relative overflow-hidden col-span-1 aspect-square shadow-sm cursor-pointer animate-flip-down animate-delay-[1200ms]"
+          class="flex flex-col justify-center items-center bg-gradient-to-bl from-violet-900 via-violet-600 to-violet-300 rounded-3xl relative overflow-hidden col-span-1 aspect-square shadow-sm cursor-pointer animate-flip-down animate-delay-[1200ms]"
         >
           <img
             class="h-[50%] hover:scale-[120%] transition duration-300 ease-in-out opacity-80"
@@ -608,7 +607,7 @@
         </button>
 
         <!-- Sección de triniyy pool -->
-        <button class="text-white rounded-3xl flex relative overflow-hidden col-span-1 aspect-square shadow-sm bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600
+        <button class="text-white rounded-3xl flex relative overflow-hidden col-span-1 aspect-square shadow-sm bg-gradient-to-tr from-violet-900 via-violet-600 to-violet-300
  bg-cover p-4 justify-center items-center animate-flip-down animate-delay-[1100ms]"
             onclick=" window.open('https://trinitypool.netlify.app/','_blank')"
         >
@@ -697,7 +696,7 @@
         
         <!-- Sección de Edad -->
         <div
-          class="text-white rounded-3xl flex relative overflow-hidden aspect-square shadow-sm bg-gradient-to-br from-violet-950 to-slate-900
+          class="text-white rounded-3xl flex relative overflow-hidden aspect-square shadow-sm bg-gradient-to-tl from-violet-900 via-violet-600 to-violet-300
  p-4 justify-center items-center animate-flip-down animate-delay-[1000ms]"
         >
           <div
